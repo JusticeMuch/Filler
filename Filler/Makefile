@@ -14,7 +14,7 @@ NAME = jronald.filler
 
 FLAGS = -Wall -Wextra -Werror -I
 
-CC = clang -o
+CC = gcc -o
 
 SRC= ./src/*.c
 
@@ -25,6 +25,7 @@ all		:	$(NAME)
 $(NAME)		:
 			@make -C ./libft/
 			@$(CC) $(NAME) $(SRC) $(FLAGS) $(INC) -L libft/ -lft
+			mv $(NAME) ../resources/players
 			@echo "jronald.filler compiled"
 
 clean	:
